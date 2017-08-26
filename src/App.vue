@@ -10,10 +10,24 @@
     export default {
         components: {
             appHeader: Header
+        },
+        data() {
+            return {
+            }
         }
     }
 </script>
 
 <style lang="scss">
+    a {
+        &:visited {
+            text-decoration: none;
+            color: white
 
+        }
+        &:hover {
+            border-style: none;
+            text-decoration: none
+        }
+    }
 </style>
