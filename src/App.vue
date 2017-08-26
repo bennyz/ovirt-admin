@@ -1,7 +1,9 @@
 <template>
     <div>
         <app-header></app-header>
-        <router-view></router-view>
+        <div class="container-fluid">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -19,6 +21,9 @@
 </script>
 
 <style lang="scss">
+    .container-fluid {
+        padding: 5px;
+    }
     a {
         &:visited {
             text-decoration: none;
