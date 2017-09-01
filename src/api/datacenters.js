@@ -8,3 +8,11 @@ export function getDatacenters() {
     });
     return api.get('datacenters');
 }
+
+export function createDatacenter(datacenter) {
+  let token = getToken().then(data => {
+      console.log(data);
+  });
+
+  return api.post('datacenters', datacenter);
+}

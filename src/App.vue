@@ -23,6 +23,7 @@
 <style lang="scss">
     .container-fluid {
         padding: 5px;
+        background-color: rgba(148, 135, 135, 0.45)
     }
     a {
         &:visited {

@@ -1,4 +1,5 @@
-import { getDatacenters } from '../../api/datacenters.js'
+import { getDatacenters,
+         createDatacenter } from '../../api/datacenters.js'
 
 const state = {
     datacenters: []
@@ -15,8 +16,15 @@ const actions = {
         getDatacenters().then(response => {
             commit('SET_DATACENTERS', response.data.data_center);
         }).catch(err => {
-            
+
         });
+    },
+    CREATE_DATACENTER({ commit }, datacenter) {
+      createDatacenter(datacenter).then(response => {
+        console.log(reponse)
+      }).catch(err => {
+
+      });
     }
 }
 

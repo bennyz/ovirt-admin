@@ -6,7 +6,7 @@ export const api = axios.create({
         username: process.env.OVIRT_USERNAME,
         password: process.env.OVIRT_PASSWORD
     }
-}) 
+})
 
 export function getToken() {
     return api.get(process.env.OVIRT_SSO_URL);
