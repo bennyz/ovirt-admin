@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <app-header></app-header>
         <div class="container-fluid">
             <router-view></router-view>
@@ -21,8 +21,14 @@
 </script>
 
 <style lang="scss">
+    body {
+      background-color: rgba(148, 135, 135, 0.45);
+    }
+    .main {
+        height: 100%;
+    }
     .container-fluid {
-        padding: 5px;
+      padding: 5px;
     }
     a {
         &:visited {
