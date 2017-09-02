@@ -7,12 +7,16 @@
                    header-tag="header"
                    align="center"
                    class="new-datacenter">
-                    <p v-if="!newDatacenter" class="card-text">
+                    <p class="card-text new-datacenter-icon">
                         <i class="fa fa-plus fa-5x"
-                           @click="newDatacenter = !newDatacenter"></i>
+                           @click="showModal"></i>
                     </p>
-                    <app-new-datacenter v-else>
-                    </app-new-datacenter>
+                    <b-modal id="new-datacenter-modal"
+                             ref="newDatacenterModal"
+                             title="New Datacenter">
+                      <app-new-datacenter>
+                      </app-new-datacenter>
+                    </b-modal>
             </b-card>
         </b-card-group>
 
@@ -25,7 +29,6 @@
     export default {
         data() {
             return {
-              newDatacenter: false
             }
         },
         components: {
@@ -33,7 +36,9 @@
             appNewDatacenter: NewDatacenter
         },
         methods: {
-
+          showModal() {
+            this.$refs.newDatacenterModal.show();
+          }
         },
         computed: {
             datacenters() {
@@ -49,14 +54,18 @@
 
 <style lang="scss" scoped>
     .card-columns {
-        column-count: 5
+        column-count: 6
     }
     .new-datacenter {
       height: 225px;
-      width: 235px;
+      background-color:rgba(0, 0, 0, 0.1);
+    }
+    .new-datacenter-icon:hover {
+      cursor: pointer;
     }
 
-    .card {
-      height: 235px;
+    .new-datacenter-icon {
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
 </style>
