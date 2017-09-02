@@ -1,25 +1,15 @@
-const express = require('express');
-const graphqlHTTP = require('express-graphql');
-const { buildSchema } = require('graphql');
 
-const schema = buildSchema(`
-        type Query {
-            hello: String
-        }
-`);
-
-const root = {
-    hello: () => {
-        return 'Hello world!';
-    },
-};
+import express from 'express';
+import graphqlHTTP from 'express-graphql';
+import schema from './schema';
 
 const app = express();
 
 app.use('/graphql', graphqlHTTP({
     schema,
-    rootValue: root,
     graphiql: true
 }));
 
-app.listen(4000);
+app.listen(4000,
+        () => console.log('GraphQL server running on http://localhost:4000/graphql')
+);
